@@ -54,8 +54,8 @@ def post_share(request, post_id):
             print(cd)
             post_url = request.build_absolute_uri(post.get_absolute_url())
             title = f"{cd['name']} sizga {post.title} ni o'qishni taklif etadi."
-            message = f"Read {post.title} at {post_url}\n\n" \
-                      f"{cd['name']}\'s comments: {cd['comments']}"
+            message = f"{post.title} maqolasini o'qing: {post_url}\n\n" \
+                      f"{cd['name']}ning izohi: {cd['comments']}"
             send_mail(title, message, 'matemmix@gmail.com', [cd['to']], fail_silently=False)
             sent = True
 
